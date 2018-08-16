@@ -1,0 +1,79 @@
+.chat{
+  width: calc(100% - 300px);
+  float: right;
+  header{
+    box-sizing: border-box;
+    height: 100px;
+    padding-top: 20px;
+    background-color: #FFFFFF;
+    .left-header{
+      float: left;
+      padding: 0 40px;
+      &__group-name{
+        padding: 15px 0;
+        font-size: 20px;
+        color: #333333;
+      }
+      &__member-list{
+        font-size: 12px;
+        color: #999999;
+      }
+    }
+    .edit-button{
+      display: block;
+      float: right;
+      margin: 8px 40px;
+      padding: 0 20px;
+      line-height: 40px;
+      color: #38AEF0;
+      border: solid 2px #38AEF0;
+    }
+  }
+  .contents{
+    height: calc(100vh - 190px);
+    background-color: #F2F2F2;
+    .message-list{
+      padding: 26px 40px 0 40px;
+      .message-container{
+        padding: 20px 0;
+        color: #434A54;
+        &__top{
+          margin-bottom: 10px;
+          background-color: #F2F2F2;
+          font-size: 16px;
+          font-weight: bold;
+            .date{
+              font-size: 12px;
+              color: #999999;
+            }
+        }
+        &__message{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .chat-form-area{
+    height: 90px;
+    background-color: #AAAAAA;
+    .chatform{
+      padding: 20px 40px;
+      &__text-box-area{
+        box-sizing: border-box;
+        height: 50px;
+        width: calc(100% - 125px);
+        margin: 0 10px 0 15px;
+
+      }
+      &__send-button{
+        float: right;
+        height: 50px;
+        width: 100px;
+        background-color: #38AEF0;
+        line-height: 50px;
+        color: #FFFFFF;
+        border-style: none;
+      }
+    }
+  }
+}
