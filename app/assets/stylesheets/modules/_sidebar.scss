@@ -1,0 +1,33 @@
+.sidebar{
+  box-sizing: border-box;
+  width: 300px;
+  height: 100vh;
+  float: left;
+  background-color: #2f3e51;
+  .top{
+    height: 100px;
+    padding: 0 20px;
+    background-color: #253141;
+    color: #FFFFFF;
+    &__name{
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 100px;
+    }
+  }
+  .contents{
+    .groups{
+      .group{
+        padding: 20px;
+        color: #FFFFFF;
+        &__name{
+          font-size: 15px;
+        }
+        &__latest-message{
+          margin-top: 5px;
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}
