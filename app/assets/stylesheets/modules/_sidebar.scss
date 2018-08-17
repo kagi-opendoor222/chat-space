@@ -8,7 +8,7 @@
     height: 100px;
     padding: 0 20px;
     background-color: #253141;
-    color: #FFFFFF;
+    color: $mainWhite;
     &__name{
       display: inline-block;
       font-size: 16px;
@@ -28,7 +28,7 @@
         font-size: 18px;
         text-decoration: none;
         a{
-          color: white;
+          color: $mainWhite;
         }
       }
     }
