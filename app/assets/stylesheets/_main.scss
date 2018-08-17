@@ -6,6 +6,8 @@
     color: $mainWhite
   }
 }
-@include clearfix()
-@import "./modules/sidebar";
-@import "./modules/chat";
+.wrapper{
+  @include clearfix()
+  @import "./modules/sidebar";
+  @import "./modules/chat";
+}
