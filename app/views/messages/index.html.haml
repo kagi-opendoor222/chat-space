@@ -2,7 +2,13 @@
   %header.top
     %h2.top__name
       user_name
-    .top__setting
+    %ul.top__setting
+      %li
+        =link_to "#" do
+          =fa_icon "edit"
+      %li
+        =link_to "#" do
+          =fa_icon "cog"
   .contents
     %ul.groups
       %li.group
