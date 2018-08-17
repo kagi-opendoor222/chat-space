@@ -14,11 +14,13 @@
       font-size: 16px;
       font-weight: bold;
       line-height: 100px;
+      @include clearfix();
     }
     &__setting{
       display: inline-block;
       float: right;
       line-height: 100px;
+      @include clearfix();
       li{
         float: right;
         display: inline-block;
@@ -35,7 +37,7 @@
     .groups{
       .group{
         padding: 20px;
-        color: #FFFFFF;
+        color: $mainWhite;
         &__name{
           font-size: 15px;
         }
