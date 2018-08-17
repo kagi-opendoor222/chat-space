@@ -1,2 +1,11 @@
+.notification{
+  height: 25px;
+  background-color: $sky-blue;
+  p{
+    text-align: center;
+    color: $mainWhite
+  }
+}
+@include clearfix()
 @import "./modules/sidebar";
 @import "./modules/chat";
