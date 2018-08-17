@@ -57,13 +57,22 @@
     height: 90px;
     background-color: #AAAAAA;
     .chatform{
+      position: relative;
       padding: 20px 40px;
-      &__text-box-area{
+      &__text-box{
         box-sizing: border-box;
         height: 50px;
         width: calc(100% - 125px);
         margin: 0 10px 0 15px;
-
+      }
+      &__file-form{
+        position: absolute;
+        right: 160px;
+        bottom: 31px;
+        font-size: 18px;
+        #hidden-file-form{
+          display: none;
+        }
       }
       &__send-button{
         float: right;
