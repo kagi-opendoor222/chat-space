@@ -60,6 +60,7 @@
     .chatform{
       position: relative;
       padding: 20px 40px;
+      @include clearfix();
       &__text-box{
         box-sizing: border-box;
         height: 50px;
