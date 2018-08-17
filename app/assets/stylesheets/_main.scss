@@ -7,7 +7,7 @@
   }
 }
 .wrapper{
-  @include clearfix()
+  @include clearfix();
   @import "./modules/sidebar";
   @import "./modules/chat";
 }
