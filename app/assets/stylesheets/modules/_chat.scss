@@ -19,6 +19,9 @@
       &__member-list{
         font-size: 12px;
         color: $supplement-light-gray;
+        .member{
+          display: inline-block;
+        }
       }
     }
     .edit-button{
