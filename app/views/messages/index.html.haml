@@ -19,7 +19,7 @@
         =render partial: "message"
     .chat-form-area
       %form.chatform
-        %input.chatform__text-box{type: "text"}
+        %input.chatform__text-box{type: "text", placeholder: "type a message"}
         %label.chatform__file-form{type: "label", for: "hidden-file-form"}
           =fa_icon "image"
           %input#hidden-file-form{type: "file"}
