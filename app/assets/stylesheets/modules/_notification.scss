@@ -1,8 +1,8 @@
 .notification{
   height: 25px;
-  background-color: $sky-blue;
+  background-color: $color-notification-background;
   p{
     text-align: center;
-    color: $mainWhite
+    color: $color-notification-p;
   }
 }
