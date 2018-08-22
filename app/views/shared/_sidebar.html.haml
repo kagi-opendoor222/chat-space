@@ -1,7 +1,7 @@
 .sidebar
   %header.top
     %h2.top__name
-      user_name
+      = current_user.name
     %ul.top__setting
       %li
         =link_to edit_user_path(current_user) do
