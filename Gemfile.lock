@@ -200,6 +200,7 @@ DEPENDENCIES
   erb2haml
   font-awesome-rails
   haml-rails
+  i18n
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
