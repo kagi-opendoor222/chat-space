@@ -1,3 +1,7 @@
 .notification
-  %p
-    チャットグループが作成されました。
+  .notice
+    %p
+      = flash[:notice]
+  .alert
+    %p
+      = flash[:alert]
