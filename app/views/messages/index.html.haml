@@ -1,6 +1,6 @@
-=render "shared/notification"
+= render "shared/notification"
 .wrapper
-  =render partial: 'shared/sidebar'
+  = render partial: 'shared/sidebar'
   .chat
     %header
       .left-header
@@ -16,11 +16,11 @@
         Edit
     .contents
       %ul.message-list
-        =render partial: "message"
+        = render partial: "message"
     .chat-form-area
       %form.chatform
         %input.chatform__text-box{type: "text", placeholder: "type a message"}
         %label.chatform__file-form{type: "label", for: "hidden-file-form"}
-          =fa_icon "image"
+          = fa_icon "image"
           %input#hidden-file-form{type: "file"}
         %input.chatform__send-button{type: "submit", value: "Send"}
