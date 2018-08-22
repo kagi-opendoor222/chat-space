@@ -1,0 +1,51 @@
+.sidebar{
+  box-sizing: border-box;
+  width: 300px;
+  height: 100vh;
+  float: left;
+  background-color: #2f3e51;
+  .top{
+    height: 100px;
+    padding: 0 20px;
+    background-color: #253141;
+    color: $color-sidebar-chara;
+    &__name{
+      display: inline-block;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 100px;
+      @include clearfix();
+    }
+    &__setting{
+      display: inline-block;
+      float: right;
+      line-height: 100px;
+      @include clearfix();
+      li{
+        float: right;
+        display: inline-block;
+        padding: 0 5px;
+        font-size: 18px;
+        text-decoration: none;
+        a{
+          color: $color-sidebar-chara;
+        }
+      }
+    }
+  }
+  .contents{
+    .groups{
+      .group{
+        padding: 20px;
+        color: $color-sidebar-chara;
+        &__name{
+          font-size: 15px;
+        }
+        &__latest-message{
+          margin-top: 5px;
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}

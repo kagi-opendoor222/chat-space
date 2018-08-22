@@ -17,3 +17,7 @@
 .byebug_history
 
 public/uploads/*
+
+#ignore mailer
+app/views/layouts/mailer.html.haml
+app/views/layouts/mailer.text.haml
