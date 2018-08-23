@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
     Group.create(group_params)
   end
   def edit
-    @group = group(params[:group_id])
+    @group = Group.find(params[:id])
   end
   def update
     Group.update(group_params)
