@@ -1,7 +1,8 @@
-$mainWhite:     #FFFFFF;
-$light-gray:    #999999;
-$chara-black:   #434A54;
-$sky-blue:      #38AEF0;
+$mainWhite:       #FFFFFF;
+$light-gray:      #999999;
+$chara-black:     #434A54;
+$sky-blue:        #38AEF0;
+$intence-orange:  #F35500;
 
 
 $color-sidebar-chara:             $mainWhite;
@@ -12,5 +13,6 @@ $color-chat-button:               $sky-blue;
 $color-chat-button-chara:         $mainWhite;
 $color-chat-basechara:            $chara-black;
 
-$color-notification-background:   $sky-blue;
-$color-notification-p:            $mainWhite;
+$color-notification-background-notice:  $sky-blue;
+$color-notification-background-alert:   $intence-orange;
+$color-notification-p:                  $mainWhite;

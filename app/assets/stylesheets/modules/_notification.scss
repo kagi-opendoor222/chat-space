@@ -1,8 +1,15 @@
 .notification{
-  height: 25px;
-  background-color: $color-notification-background;
-  p{
-    text-align: center;
-    color: $color-notification-p;
+  text-align: center;
+  .notice{
+    background-color: $color-notification-background-notice;
+    p{
+      color: $color-notification-p;
+    }
+  }
+  .alert{
+    background-color: $color-notification-background-alert;
+    p{
+      color: $color-notification-p;
+    }
   }
 }
