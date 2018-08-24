@@ -1,10 +1,7 @@
-%li.group
-  %h3.group__name
-    sample_group
-  %p.group__latest-message
-    sample_message
-%li.group
-  %h3.group__name
-    sample_group
-  %p.group__latest-message
-    sample_message
+- current_user.groups.each do |group|
+  = link_to group_messages_path(group) do
+    %li.group
+      %h3.group__name
+        = group.name
+      %p.group__latest-message
+        sample_message

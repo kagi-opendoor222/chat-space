@@ -4,11 +4,11 @@
       = current_user.name
     %ul.top__setting
       %li
-        =link_to edit_user_path(current_user) do
-          =fa_icon "cog"
+        = link_to edit_user_path(current_user) do
+          = fa_icon "cog"
       %li
-        =link_to new_group_path do
-          =fa_icon "edit"
+        = link_to new_group_path do
+          = fa_icon "edit"
   .contents
     %ul.groups
-      =render partial: "shared/group"
+      = render partial: "shared/group"

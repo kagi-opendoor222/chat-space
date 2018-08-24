@@ -1,5 +1,6 @@
 .chat{
   width: calc(100% - 300px);
+  min-width: 500px;
   float: right;
   header{
     box-sizing: border-box;
