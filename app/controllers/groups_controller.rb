@@ -16,7 +16,13 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
   def update
-    Group.update(group_params)
+    @group = Group.find(params[:id])
+    if @group.update(group_params)
+      @group.users = User.where(id: params[:user_ids])
+      redirect_to group_messages_path(@group), notice: "グループ情報を更新しました。"
+    else
+      render :edit
+    end
   end
   private
   def group_params
