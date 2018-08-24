@@ -34,7 +34,12 @@
     }
   }
   .contents{
+    height: calc(100vh - 100px);
+    overflow: scroll;
     .groups{
+      a{
+        text-decoration: none;
+      }
       .group{
         padding: 20px;
         color: $color-sidebar-chara;
@@ -44,6 +49,7 @@
         &__latest-message{
           margin-top: 5px;
           font-size: 11px;
+
         }
       }
     }
