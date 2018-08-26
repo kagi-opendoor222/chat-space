@@ -7,10 +7,7 @@
           = @group.name
         %ul.left-header__member-list
           member:
-          %li.member
-            no1,
-          %li.member
-            no2
+          = render partial: "groups/user_list", collection: @group.users, as: :user
       .edit-button
         Edit
     .contents
