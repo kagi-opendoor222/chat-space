@@ -20,5 +20,7 @@ module ChatSpace
 
     config.i18n.default_locale = :ja
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| %Q(#{html_tag}).html_safe }
+    config.time_zone = 'Tokyo'
   end
+  Time::DATE_FORMATS[:default] = '%Y/%m/%d %H:%M:%S'
 end

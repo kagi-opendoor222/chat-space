@@ -38,6 +38,7 @@
   .contents{
     height: calc(100vh - 190px);
     background-color: #F2F2F2;
+    overflow: scroll;
     .message-list{
       padding: 26px 40px 0 40px;
       .message-container{
