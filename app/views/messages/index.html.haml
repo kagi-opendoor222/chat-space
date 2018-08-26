@@ -17,9 +17,17 @@
       %ul.message-list
         = render partial: "message"
     .chat-form-area
-      %form.chatform
-        %input.chatform__text-box{type: "text", placeholder: "type a message"}
-        %label.chatform__file-form{type: "label", for: "hidden-file-form"}
+      / %form.chatform
+      /   %input.chatform__text-box{type: "text", placeholder: "type a message"}
+      /   %label.chatform__file-form{type: "label", for: "hidden-file-form"}
+      /     = fa_icon "image"
+      /     %input#hidden-file-form{type: "file"}
+      /   %input.chatform__send-button{type: "submit", value: "Send"}
+      = form_for [@group, @message], html: {class: "chatform"} do |f|
+        = f.text_field :text, placeholder: "type a message", class: "chatform__text-box"
+        = f.label :file, for: "hidden-file-form", class: "chatform__file-form" do
           = fa_icon "image"
-          %input#hidden-file-form{type: "file"}
-        %input.chatform__send-button{type: "submit", value: "Send"}
+          = f.file_field :image, id: "hidden-file-form"
+        = f.submit value: "Send", class: "chatform__send-button"
+
+
