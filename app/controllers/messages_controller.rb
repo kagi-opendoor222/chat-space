@@ -1,11 +1,10 @@
 class MessagesController < ApplicationController
+  before_action :set_group, only: [:index, :create]
   def index
-    @group = Group.find(params[:group_id])
     @messages = @group.messages.includes(:user)
     @message = Message.new
   end
   def create
-    @group = Group.find(params[:group_id])
     @message = Message.new(message_params.merge({user_id: current_user.id, group_id: @group.id}))
     if @message.save
       redirect_to action: :index
@@ -17,6 +16,9 @@ class MessagesController < ApplicationController
 
   end
   private
+  def set_group
+    @group = Group.find(params[:group_id])
+  end
   def message_params
     params.require(:message).permit(:text, :image)
   end
