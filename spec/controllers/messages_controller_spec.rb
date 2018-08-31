@@ -61,6 +61,10 @@ describe MessagesController do
       end
     end
     context "not log in" do
+      it "redirects to sign_up" do
+        post :create, params: params
+        expect(response).to redirect_to(new_user_session_path)
+      end
     end
   end
 end
