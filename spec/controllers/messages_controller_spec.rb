@@ -29,5 +29,9 @@ describe MessagesController do
     end
   end
   describe "POST #create" do
+    context "log in" do
+    end
+    context "not log in" do
+    end
   end
 end
