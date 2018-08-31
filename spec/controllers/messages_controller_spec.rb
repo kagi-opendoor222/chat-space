@@ -30,6 +30,10 @@ describe MessagesController do
   end
   describe "POST #create" do
     context "log in" do
+      context "can save" do
+      end
+      context "can't save" do
+      end
     end
     context "not log in" do
     end
