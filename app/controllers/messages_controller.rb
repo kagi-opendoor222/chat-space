@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
   end
   def create
     @message = Message.new(message_params.merge({user_id: current_user.id, group_id: @group.id}))
+
     if @message.save
       respond_to do |format|
         format.html{redirect_to action: :index}
@@ -23,10 +24,10 @@ class MessagesController < ApplicationController
           render json: { alert: "メッセージを入力してください" }
         }
       end
-
     end
 
   end
+
   private
   def set_group
     @group = Group.find(params[:group_id])
