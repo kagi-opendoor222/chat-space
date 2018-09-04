@@ -7,7 +7,10 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params.merge({user_id: current_user.id, group_id: @group.id}))
     if @message.save
-      redirect_to action: :index
+      respond_to do |format|
+        format.html{redirect_to action: :index}
+        format.json
+      end
     else
       @messages = @group.messages.includes(:user)
       flash.now[:alert] = "メッセージを入力してください"
