@@ -25,6 +25,8 @@ $(function(){
     e.preventDefault()
     url = $(this).attr("action")
     var formData = new FormData(this)
+    var alertMessage = $(".alert p")
+
     $.ajax({
       type: "POST",
       data: formData,
@@ -37,15 +39,15 @@ $(function(){
       if(data.alert == null){
         appendList(data)
         $(".chat").find($('.contents')).animate({scrollTop: $(".chat").find($('.contents'))[0].scrollHeight}, 500, "swing");
-        $(".alert p").text("")
+        alertMessage.text("")
       }else{
-        $(".alert p").text(data.alert)
+        alertMessage.text(data.alert)
       }
       formReset()
     })
     .fail(function(data){
       console.log(data)
-      $(".alert p").text("メッセージの送信に失敗しました。")
+      alertMessage.text("メッセージの送信に失敗しました。")
       formReset()
     })
   })
