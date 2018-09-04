@@ -28,7 +28,12 @@ $(function(){
     })
     .done(function(data){
       appendList(data)
-      $(".chat").find($('.contents')).animate({scrollTop: $(".chat").find($('.contents'))[0].scrollHeight}, 500, "swing");
+      if(data.alert == null){
+        $(".chat").find($('.contents')).animate({scrollTop: $(".chat").find($('.contents'))[0].scrollHeight}, 500, "swing");
+        $(".alert p").text("")
+      }else{
+        $(".alert p").text(data.alert)
+      }
       $('#new_message')[0].reset();
       $("#new_message").find(".chatform__send-button").prop("disabled", false)
       $("#new_message").find(".chatform__send-button").prop("value", "send")
