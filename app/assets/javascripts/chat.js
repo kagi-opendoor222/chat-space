@@ -28,6 +28,7 @@ $(function(){
     })
     .done(function(data){
       appendList(data)
+      $(".chat").find($('.contents')).animate({scrollTop: $(".chat").find($('.contents'))[0].scrollHeight}, 500, "swing");
     })
   })
 })
