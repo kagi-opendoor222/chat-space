@@ -33,5 +33,11 @@ $(function(){
       $("#new_message").find(".chatform__send-button").prop("disabled", false)
       $("#new_message").find(".chatform__send-button").prop("value", "send")
     })
+    .fail(function(data){
+      console.log(data)
+      $(".alert p").text("メッセージの送信に失敗しました。")
+      $("#new_message").find(".chatform__send-button").prop("disabled", false)
+      $("#new_message").find(".chatform__send-button").prop("value", "send")
+    })
   })
 })
