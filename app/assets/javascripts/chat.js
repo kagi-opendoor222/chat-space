@@ -14,6 +14,13 @@ $(function(){
               </li>`
     $(".message-list").append(html)
   }
+
+  function formReset(){
+    $('#new_message')[0].reset();
+    $("#new_message").find(".chatform__send-button").prop("disabled", false)
+    $("#new_message").find(".chatform__send-button").prop("value", "Send")
+  }
+
   $("#new_message").on("submit", function(e){
     e.preventDefault()
     url = $(this).attr("action")
@@ -34,15 +41,12 @@ $(function(){
       }else{
         $(".alert p").text(data.alert)
       }
-      $('#new_message')[0].reset();
-      $("#new_message").find(".chatform__send-button").prop("disabled", false)
-      $("#new_message").find(".chatform__send-button").prop("value", "Send")
+      formReset()
     })
     .fail(function(data){
       console.log(data)
       $(".alert p").text("メッセージの送信に失敗しました。")
-      $("#new_message").find(".chatform__send-button").prop("disabled", false)
-      $("#new_message").find(".chatform__send-button").prop("value", "Send")
+      formReset()
     })
   })
 })
