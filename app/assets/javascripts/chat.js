@@ -46,9 +46,9 @@ $(function(){
       formReset()
     })
     .fail(function(data){
-      console.log(data)
       alertMessage.text("メッセージの送信に失敗しました。")
       formReset()
     })
+
   })
 })
