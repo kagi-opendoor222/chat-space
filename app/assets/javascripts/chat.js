@@ -24,7 +24,7 @@ $(function(){
 
   $("#new_message").on("submit", function(e){
     e.preventDefault()
-    url = $(this).attr("action")
+    var url = $(this).attr("action")
     var formData = new FormData(this)
     var alertMessage = $(".alert p")
 
