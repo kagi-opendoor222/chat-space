@@ -39,7 +39,10 @@ $(function(){
     .done(function(data){
       if(data.alert == null){
         appendList(data)
-        $(".chat").find($('.contents')).animate({scrollTop: $(".chat").find($('.contents'))[0].scrollHeight}, 500, "swing");
+
+        var scrollTarget = $(".chat").find($('.contents'))
+
+        scrollTarget.animate({scrollTop: scrollTarget[0].scrollHeight}, 500, "swing");
         alertMessage.text("")
       }else{
         alertMessage.text(data.alert)
