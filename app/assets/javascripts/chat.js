@@ -1,5 +1,6 @@
 $(function(){
   function appendList(data){
+   var image = (data.image != null) ? `<img style="margin-top: 10px" src="${data.image}"}` : ''
    var html = `<li class="message-container">
                 <div class="message-container__top">
                   ${data.user_name}
@@ -7,7 +8,7 @@ $(function(){
                     ${data.created_at}
                   </span>
                 </div>
-                ${(data.image != null) ? `<img style="margin-top: 10px" src="${data.image}"}` : ''}
+                ${image}
                 <div class="message-container__message">
                   ${data.text}
                 </div>
