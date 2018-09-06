@@ -25,6 +25,6 @@
         = f.label :file, for: "hidden-file-form", class: "chatform__file-form" do
           = fa_icon "image"
           = f.file_field :image, id: "hidden-file-form"
-        = f.submit value: "Send", class: "chatform__send-button"
+        = f.submit value: "Send", class: "chatform__send-button", "data-disable-with" => "..."
 
 
