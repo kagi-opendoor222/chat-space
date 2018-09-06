@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
     @message = Message.new
   end
   def create
-    @message = Message.new(message_params.merge({user_id: current_user.id, group_id: @group.id}))
+    @message = Message.new(message_params)
 
     if @message.save
       respond_to do |format|
@@ -33,6 +33,6 @@ class MessagesController < ApplicationController
     @group = Group.find(params[:group_id])
   end
   def message_params
-    params.require(:message).permit(:text, :image)
+    params.require(:message).permit(:text, :image).merge({user_id: current_user.id, group_id: @group.id})
   end
 end
