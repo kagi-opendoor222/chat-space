@@ -42,5 +42,6 @@ $(function(){
   $(document).on("click", ".chat-group-user__btn--add", function(){
     var user = $(this).data()
     appendGroupUser(user)
+    $(this).parent().remove()
   })
 })
