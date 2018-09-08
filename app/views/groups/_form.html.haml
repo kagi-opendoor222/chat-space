@@ -51,6 +51,7 @@
         </div>
         </div>
       #chat-group-users
+        = f.hidden_field :user_ids, name: "group[user_ids][]", value: ""
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
