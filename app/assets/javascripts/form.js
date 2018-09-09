@@ -26,29 +26,31 @@ $(function(){
   function searchUser(){
     var input = $("#user-search-field").val();
     var url = "/users";
-
-    $.ajax({
-      type: "GET",
-      url: url,
-      data: {
-        keyword: input
-      },
-      dataType: "json"
-    })
-    .done(function(users){
-      $("#user-search-result").empty()
-      var chosen = makeUserChosenArray()
-
-      users.forEach(function(user){
-        // ユーザーがリストに追加されてない場合のみbuildHtml
-        if(chosen.indexOf(user.id) == -1){
-          buildHtml(user)
-        }
+    $("#user-search-result").empty()
+    // inputが空白でない時のみ通信
+    if(input.match(/[a-z]/)){
+      $.ajax({
+        type: "GET",
+        url: url,
+        data: {
+          keyword: input
+        },
+        dataType: "json"
       })
-    })
-    .fail(function(users){
-      $(".alert p").text("エラーが発生しました。")
-    })
+      .done(function(users){
+        var chosen = makeUserChosenArray()
+
+        users.forEach(function(user){
+          // ユーザーがリストに追加されてない場合のみbuildHtml
+          if(chosen.indexOf(user.id) == -1){
+            buildHtml(user)
+          }
+        })
+      })
+      .fail(function(users){
+        $(".alert p").text("エラーが発生しました。")
+      })
+    }
   }
 
   $("#user-search-field").on("keyup",function(){
