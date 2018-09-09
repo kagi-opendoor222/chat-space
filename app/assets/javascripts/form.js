@@ -1,4 +1,5 @@
 $(function(){
+  var searchResult = $("#user-search-result")
   var chosenUsersList = $("#chat-group-users")
   var textBox = $("#user-search-field")
 
@@ -8,7 +9,7 @@ $(function(){
        <p class="chat-group-user__name">${user.name}</p>
        <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
      </div>`
-    $("#user-search-result").append(html)
+    searchResult.append(html)
   }
 
   function appendGroupUser(user){
@@ -32,7 +33,7 @@ $(function(){
   function searchUser(){
     var input = textBox.val();
     var url = "/users";
-    $("#user-search-result").empty()
+    searchResult.empty()
     // inputが空白でない時のみ通信
     if(input.match(/[a-z]/)){
       $.ajax({
