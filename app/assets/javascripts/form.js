@@ -1,4 +1,5 @@
 $(function(){
+
   function buildHtml(user){
     var html =
     `<div class="chat-group-user clearfix">
@@ -7,6 +8,7 @@ $(function(){
      </div>`
     $("#user-search-result").append(html)
   }
+
   function appendGroupUser(user){
     var html =
     `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
@@ -16,6 +18,7 @@ $(function(){
     </div>`
     $("#chat-group-users").append(html)
   }
+
   function makeUserChosenArray(){
     chosen = []
     $("#chat-group-users").find("input[type=hidden]").each(function(index, element){
@@ -23,6 +26,7 @@ $(function(){
     })
     return chosen
   }
+
   function searchUser(){
     var input = $("#user-search-field").val();
     var url = "/users";
