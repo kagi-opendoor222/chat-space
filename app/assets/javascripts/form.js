@@ -1,4 +1,5 @@
 $(function(){
+  var chosenUsersList = $("#chat-group-users")
   var textBox = $("#user-search-field")
 
   function buildHtml(user){
@@ -17,12 +18,12 @@ $(function(){
       <p class='chat-group-user__name'>${user.userName}</p>
       <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
     </div>`
-    $("#chat-group-users").append(html)
+    chosenUsersList.append(html)
   }
 
   function makeUserChosenArray(){
     chosen = []
-    $("#chat-group-users").find("input[type=hidden]").each(function(index, element){
+    chosenUsersList.find("input[type=hidden]").each(function(index, element){
         chosen.push(parseInt($(element).attr("value")))
     })
     return chosen
