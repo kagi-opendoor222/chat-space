@@ -52,9 +52,14 @@ $(function(){
       $(".alert p").text("エラーが発生しました。")
     })
   })
+
   $(document).on("click", ".chat-group-user__btn--add", function(){
     var user = $(this).data()
     appendGroupUser(user)
+    $(this).parent().remove()
+  })
+
+  $(document).on("click", ".chat-group-user__btn--remove", function(){
     $(this).parent().remove()
   })
 })
