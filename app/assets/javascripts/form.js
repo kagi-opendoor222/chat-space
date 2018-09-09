@@ -2,6 +2,7 @@ $(function(){
   var searchResult = $("#user-search-result")
   var chosenUsersList = $("#chat-group-users")
   var textBox = $("#user-search-field")
+  var previousChosenUser = []
 
   function buildHtml(user){
     var html =
@@ -33,7 +34,7 @@ $(function(){
   function searchUser(){
     var input = textBox.val();
     var url = "/users";
-    searchResult.empty()
+
     // inputが空白でない時のみ通信
     if(input.match(/[a-z]/)){
       $.ajax({
@@ -47,16 +48,24 @@ $(function(){
       .done(function(users){
         var chosen = makeUserChosenArray()
 
-        users.forEach(function(user){
-          // ユーザーがリストに追加されてない場合のみbuildHtml
-          if(chosen.indexOf(user.id) == -1){
-            buildHtml(user)
-          }
-        })
+        if(users !== previousChosenUser){
+          searchResult.empty()
+          users.forEach(function(user){
+            // ユーザーがリストに追加されてない場合のみbuildHtml
+            if(chosen.indexOf(user.id) == -1){
+              buildHtml(user)
+            }
+          })
+        }
+
+        previousChosenUser = users
       })
       .fail(function(users){
         $(".alert p").text("エラーが発生しました。")
       })
+    }
+    else{
+      searchResult.empty()
     }
   }
 
