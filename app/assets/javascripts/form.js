@@ -23,8 +23,7 @@ $(function(){
     })
     return chosen
   }
-
-  $("#user-search-field").on("keyup",function(){
+  function searchUser(){
     var input = $("#user-search-field").val();
     var url = "/users";
 
@@ -46,11 +45,14 @@ $(function(){
           buildHtml(user)
         }
       })
-
     })
     .fail(function(users){
       $(".alert p").text("エラーが発生しました。")
     })
+  }
+
+  $("#user-search-field").on("keyup",function(){
+    searchUser()
   })
 
   $(document).on("click", ".chat-group-user__btn--add", function(){
