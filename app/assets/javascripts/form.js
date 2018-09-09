@@ -1,4 +1,5 @@
 $(function(){
+  var textBox = $("#user-search-field")
 
   function buildHtml(user){
     var html =
@@ -28,7 +29,7 @@ $(function(){
   }
 
   function searchUser(){
-    var input = $("#user-search-field").val();
+    var input = textBox.val();
     var url = "/users";
     $("#user-search-result").empty()
     // inputが空白でない時のみ通信
@@ -57,7 +58,7 @@ $(function(){
     }
   }
 
-  $("#user-search-field").on("keyup",function(){
+  textBox.on("keyup",function(){
     searchUser()
   })
 
