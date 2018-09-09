@@ -16,11 +16,18 @@ $(function(){
     </div>`
     $("#chat-group-users").append(html)
   }
+  function makeUserChosenArray(){
+    chosen = []
+    $("#chat-group-users").find("input[type=hidden]").each(function(index, element){
+        chosen.push(parseInt($(element).attr("value")))
+    })
+    return chosen
+  }
 
   $("#user-search-field").on("keyup",function(){
     var input = $("#user-search-field").val();
     var url = "/users";
-    console.log(input);
+
     $.ajax({
       type: "GET",
       url: url,
@@ -31,9 +38,15 @@ $(function(){
     })
     .done(function(users){
       $("#user-search-result").empty()
+      var chosen = makeUserChosenArray()
+
       users.forEach(function(user){
-        buildHtml(user)
+        // ユーザーがリストに追加されてない場合のみbuildHtml
+        if(chosen.indexOf(user.id) == -1){
+          buildHtml(user)
+        }
       })
+
     })
     .fail(function(users){
       $(".alert p").text("エラーが発生しました。")
