@@ -1,5 +1,7 @@
 $(function(){
   var alertMessage = $(".alert p")
+  var latestMessage = window.latestMessage
+
   function appendList(data){
    var image = (data.image != null) ? `<img style="margin-top: 10px" src="${data.image}"}` : ''
    var html = `<li class="message-container">
@@ -57,8 +59,6 @@ $(function(){
     })
 
   })
-
-  var latestMessage = window.latestMessage
 
   function reLoadPage(){
     var url = window.location.pathname
