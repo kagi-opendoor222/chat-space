@@ -47,10 +47,10 @@ $(function(){
       if(data.alert == null){
         appendList(data)
         alertMessage.text("")
+        latestMessage = data
       }else{
         alertMessage.text(data.alert)
       }
-      latestMessage = data
       formReset()
     })
     .fail(function(data){
