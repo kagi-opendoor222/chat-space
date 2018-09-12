@@ -70,4 +70,6 @@ $(function(){
       dataType: "json",
     })
 
+  setInterval(reLoadPage, 5000)
+
 })
