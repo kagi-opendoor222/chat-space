@@ -14,6 +14,11 @@ $(function(){
                 </div>
               </li>`
     $(".message-list").append(html)
+
+    var scrollTarget = $(".chat").find($('.contents'))
+
+    scrollTarget.animate({scrollTop: scrollTarget[0].scrollHeight}, 500, "swing");
+
   }
 
   function formReset(){
@@ -39,10 +44,6 @@ $(function(){
     .done(function(data){
       if(data.alert == null){
         appendList(data)
-
-        var scrollTarget = $(".chat").find($('.contents'))
-
-        scrollTarget.animate({scrollTop: scrollTarget[0].scrollHeight}, 500, "swing");
         alertMessage.text("")
       }else{
         alertMessage.text(data.alert)
