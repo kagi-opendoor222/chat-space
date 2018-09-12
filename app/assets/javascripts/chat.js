@@ -72,6 +72,7 @@ $(function(){
     .done(function(messages){
       messages.forEach(function(message){
         appendList(message)
+        latestMessage = message
       })
     })
 
