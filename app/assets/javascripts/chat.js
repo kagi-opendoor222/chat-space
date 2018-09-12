@@ -1,4 +1,5 @@
 $(function(){
+  var alertMessage = $(".alert p")
   function appendList(data){
    var image = (data.image != null) ? `<img style="margin-top: 10px" src="${data.image}"}` : ''
    var html = `<li class="message-container">
@@ -31,7 +32,6 @@ $(function(){
     e.preventDefault()
     var url = $(this).attr("action")
     var formData = new FormData(this)
-    var alertMessage = $(".alert p")
 
     $.ajax({
       type: "POST",
