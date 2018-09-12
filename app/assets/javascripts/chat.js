@@ -48,6 +48,7 @@ $(function(){
       }else{
         alertMessage.text(data.alert)
       }
+      latestMessage = data
       formReset()
     })
     .fail(function(data){
