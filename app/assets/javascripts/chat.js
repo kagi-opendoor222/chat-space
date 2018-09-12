@@ -69,6 +69,13 @@ $(function(){
         },
       dataType: "json",
     })
+    .done(function(messages){
+      messages.forEach(function(message){
+        appendList(message)
+      })
+    })
+
+  }
 
   setInterval(reLoadPage, 5000)
 
