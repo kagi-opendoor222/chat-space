@@ -55,4 +55,16 @@ $(function(){
     })
 
   })
+  function reLoadPage(){
+    var url = window.location.pathname
+
+    $.ajax({
+      type: "GET",
+      url: url,
+      data: {
+          latestMessage: latestMessage
+        },
+      dataType: "json",
+    })
+
 })
