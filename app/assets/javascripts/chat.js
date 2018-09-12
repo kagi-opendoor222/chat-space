@@ -55,6 +55,9 @@ $(function(){
     })
 
   })
+
+  var latestMessage = window.latestMessage
+
   function reLoadPage(){
     var url = window.location.pathname
 

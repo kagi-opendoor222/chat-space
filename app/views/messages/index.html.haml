@@ -1,3 +1,6 @@
+= javascript_tag do
+  window.group = #{raw @group.to_json}
+  window.latestMessage = #{raw @messages.last.to_json}
 .wrapper
   = render partial: 'shared/sidebar'
   .chat
