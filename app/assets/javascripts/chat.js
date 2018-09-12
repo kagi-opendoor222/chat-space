@@ -77,6 +77,9 @@ $(function(){
         latestMessage = message
       })
     })
+    .fail(function(messages){
+      alertMessage.text("接続に失敗しました。")
+    })
 
   }
 
