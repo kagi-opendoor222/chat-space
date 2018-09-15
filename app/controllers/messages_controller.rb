@@ -1,9 +1,20 @@
 class MessagesController < ApplicationController
   before_action :set_group, only: [:index, :create]
+
   def index
     set_messages
     @message = Message.new
+
+    respond_to do |format|
+      format.json{
+        if params[:latestMessage][:id].to_i != @group.messages.last.id
+          @new_messages = @group.messages.where("id > #{params[:latestMessage][:id].to_i}")
+        end
+      }
+      format.html
+    end
   end
+
   def create
     @message = Message.new(message_params)
 

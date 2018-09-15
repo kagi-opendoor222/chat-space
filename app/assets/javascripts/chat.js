@@ -1,4 +1,7 @@
 $(function(){
+  var alertMessage = $(".alert p")
+  var latestMessage = window.latestMessage
+
   function appendList(data){
    var image = (data.image != null) ? `<img style="margin-top: 10px" src="${data.image}"}` : ''
    var html = `<li class="message-container">
@@ -14,6 +17,10 @@ $(function(){
                 </div>
               </li>`
     $(".message-list").append(html)
+
+    var scrollTarget = $(".chat").find($('.contents'))
+
+    scrollTarget.animate({scrollTop: scrollTarget[0].scrollHeight}, 500, "swing");
   }
 
   function formReset(){
@@ -26,7 +33,6 @@ $(function(){
     e.preventDefault()
     var url = $(this).attr("action")
     var formData = new FormData(this)
-    var alertMessage = $(".alert p")
 
     $.ajax({
       type: "POST",
@@ -39,11 +45,8 @@ $(function(){
     .done(function(data){
       if(data.alert == null){
         appendList(data)
-
-        var scrollTarget = $(".chat").find($('.contents'))
-
-        scrollTarget.animate({scrollTop: scrollTarget[0].scrollHeight}, 500, "swing");
         alertMessage.text("")
+        latestMessage = data
       }else{
         alertMessage.text(data.alert)
       }
@@ -53,6 +56,29 @@ $(function(){
       alertMessage.text("メッセージの送信に失敗しました。")
       formReset()
     })
-
   })
+
+  function reLoadPage(){
+    var url = window.location.pathname
+
+    $.ajax({
+      type: "GET",
+      url: url,
+      data: {
+          latestMessage: latestMessage
+        },
+      dataType: "json",
+    })
+    .done(function(messages){
+      messages.forEach(function(message){
+        appendList(message)
+        latestMessage = message
+      })
+    })
+    .fail(function(messages){
+      alertMessage.text("接続に失敗しました。")
+    })
+  }
+
+  setInterval(reLoadPage, 5000)
 })
