@@ -21,7 +21,6 @@ $(function(){
     var scrollTarget = $(".chat").find($('.contents'))
 
     scrollTarget.animate({scrollTop: scrollTarget[0].scrollHeight}, 500, "swing");
-
   }
 
   function formReset(){
@@ -57,7 +56,6 @@ $(function(){
       alertMessage.text("メッセージの送信に失敗しました。")
       formReset()
     })
-
   })
 
   function reLoadPage(){
