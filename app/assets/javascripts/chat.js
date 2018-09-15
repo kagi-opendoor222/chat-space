@@ -80,9 +80,7 @@ $(function(){
     .fail(function(messages){
       alertMessage.text("接続に失敗しました。")
     })
-
   }
 
   setInterval(reLoadPage, 5000)
-
 })
