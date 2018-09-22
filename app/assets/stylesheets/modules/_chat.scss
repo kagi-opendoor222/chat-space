@@ -33,6 +33,10 @@
       line-height: 40px;
       color: $color-chat-button;
       border: solid 2px $color-chat-button;
+      a{
+        color: $color-chat-button;
+        text-decoration: none;
+      }
     }
   }
   .contents{
