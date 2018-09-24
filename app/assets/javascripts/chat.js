@@ -80,5 +80,10 @@ $(function(){
     })
   }
 
-  setInterval(reLoadPage, 5000)
+  var controller = $("body").data("controllerName")
+  if(controller == "messages"){
+    setInterval(reLoadPage, 5000)
+  }
+
+
 })
