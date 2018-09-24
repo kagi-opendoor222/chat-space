@@ -7,8 +7,9 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       format.json{
-        if params[:latestMessage][:id].to_i != @group.messages.last.id
-          @new_messages = @group.messages.where("id > #{params[:latestMessage][:id].to_i}")
+        latest_message_id = params[:latestMessage].present? ? params[:latestMessage][:id].to_i : 0
+        if @group.messages.last && latest_message_id != @group.messages.last.id
+          @new_messages = @group.messages.where("id > #{latest_message_id}")
         end
       }
       format.html
