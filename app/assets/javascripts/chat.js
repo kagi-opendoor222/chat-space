@@ -11,10 +11,10 @@ $(function(){
                     ${data.created_at}
                   </span>
                 </div>
-                ${image}
                 <div class="message-container__message">
                   ${data.text}
                 </div>
+                ${image}
               </li>`
     $(".message-list").append(html)
 
