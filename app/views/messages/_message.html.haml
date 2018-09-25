@@ -3,6 +3,6 @@
     = message.user.name
     %span.date
       = message.created_at
-  = image_tag(message.image.url,style: "margin-top: 10px") if message.image.present?
   .message-container__message
     = message.text
+  = image_tag(message.image.url,style: "margin-top: 10px") if message.image.present?
